@@ -1,6 +1,7 @@
 Spaceship bob;
 Star [] jeff = new Star[100];
 
+ArrayList <Asteroid> rocks = new ArrayList <Asteroid>();
 boolean right, left, accelerate;
 
 void setup(){
@@ -8,6 +9,9 @@ void setup(){
   bob = new Spaceship();
   for (int i = 0; i < jeff.length; i++){
     jeff[i] = new Star();
+  }
+  for (int i = 0; i < 10; i++){
+    rocks.add(new Asteroid());
   }
 }
 
@@ -25,6 +29,15 @@ void draw(){
   } if (accelerate){
     bob.accelerate(.05);
   }
+  
+  for (int i = 0; i < rocks.size(); i++){
+    rocks.get(i).move();
+    rocks.get(i).show();
+    float d = dist((float)bob.getX(), (float)bob.getY(), (float)rocks.get(i).getX(), (float)rocks.get(i).getY());
+    if (d < rocks.get(i).getRadius())
+      rocks.remove(i);
+  }
+  
 }
 
 public void keyPressed(){
