@@ -119,7 +119,6 @@ void draw(){
 }
 
 public void keyPressed(){
-  System.out.println(keyCode);
   if (keyCode == 37){
     //bob.turn(-5);
     left = true;
