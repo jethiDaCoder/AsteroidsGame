@@ -16,8 +16,8 @@ void setup(){
   for (int i = 0; i < 10; i++){
     rocks.add(new Asteroid());
   }  
-  score = 499;
-  high_score = 499;
+  score = 0;
+  high_score = 0;
 }
 
 void draw(){
@@ -158,8 +158,8 @@ class Bullets extends Floater{
   double dRadians;
   boolean hit;
   Bullets(){
-    myCenterX = bob.getCenterX();
-    myCenterY = bob.getCenterY(); 
+    myCenterX = bob.getX();
+    myCenterY = bob.getY(); 
     myPointDirection = bob.getDirection();
     dRadians = myPointDirection*(Math.PI/180); 
     myXspeed = Math.cos(dRadians) * 8;
