@@ -27,4 +27,8 @@ class Spaceship extends Floater
   public double getY(){
     return myCenterY;
   }
+  
+  public void setColor(int colors){
+    myColor = colors;
+  }
 }
